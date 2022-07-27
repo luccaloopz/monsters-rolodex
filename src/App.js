@@ -4,39 +4,6 @@ import './App.css';
 import Cardlist from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 
-// class App extends Component {
-//   constructor() {
-//     super();
-
-//     this.state = {
-//       name: {firstName: 'Lucca', lastName: 'Martins'},
-//       company: 'ZTM'
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <p>Hi {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company}</p>
-//           <button onClick={() => {
-//             this.setState(() => {
-//               return {
-//                 name: {firstName: 'John', lastName: 'Smith'}
-//               }
-//             }, () => {
-//               console.log(this.state)
-//             });  // updates state, sees that it's now a new object in memory and thus updates the app's UI
-//             // passing in an object into setState is also called a shallow merge. The setState is happening asynchronously and thus the below line 'console.log(this.state)' is being executed before we set the new state
-//             // by using the executable function followed by the callback function, you change state and then and only then ask your code to console log the new state. Also the callback in optional, you dont need to include it
-//           }} >Change Name</button>
-//         </header>
-//       </div>
-//     );
-//   }
-// }
-
 class App extends Component {
   constructor() {
     super();
@@ -76,12 +43,45 @@ class App extends Component {
         <SearchBox 
           onSearchChange={onSearchChange}
           placeholder='search monsters'
-          className='search-box'
+          className='monsters-search-box'
           /> 
         <Cardlist monsters={filteredMonsters} />
       </div> 
     );
   }
 }
+
+// class App extends Component {
+//   constructor() {
+//     super();
+
+//     this.state = {
+//       name: {firstName: 'Lucca', lastName: 'Martins'},
+//       company: 'ZTM'
+//     }
+//   }
+
+//   render() {
+//     return (
+//       <div className="App">
+//         <header className="App-header">
+//           <img src={logo} className="App-logo" alt="logo" />
+//           <p>Hi {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company}</p>
+//           <button onClick={() => {
+//             this.setState(() => {
+//               return {
+//                 name: {firstName: 'John', lastName: 'Smith'}
+//               }
+//             }, () => {
+//               console.log(this.state)
+//             });  // updates state, sees that it's now a new object in memory and thus updates the app's UI
+//             // passing in an object into setState is also called a shallow merge. The setState is happening asynchronously and thus the below line 'console.log(this.state)' is being executed before we set the new state
+//             // by using the executable function followed by the callback function, you change state and then and only then ask your code to console log the new state. Also the callback in optional, you dont need to include it
+//           }} >Change Name</button>
+//         </header>
+//       </div>
+//     );
+//   }
+// }
 
 export default App;
